@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-links">Início</a>
+            </li>
+             <li>
+                <a href="#sobre" class="menu-links">Sobre</a>
+            </li>
+             <li>
+                <a href="#projetos" class="menu-links">Projetos</a>
+            </li>
+             <li>
+                <a href="#video" class="menu-links">Video</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-links">Contato</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+            <img src="Img/portfolio_avatar.png" class="foto">
+
+            <h1>Pedro de Matos</h1>
+
+            <p>Estudante de Desenvolvimento de Sistemas & Desenvolvedor de Jogos</p>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        
+        <div class="caixa-sobre">
+            <p class="sobre-paragrafo">
+                Sou estudante de Desenvolvimento de Sistemas na ETEC Raposo Tavares e um entusiasta da criação de soluções complexas através da programação. Meu foco principal está no desenvolvimento de jogos e sistemas autônomos utilizando C# e Unity.
+                Acredito que a tecnologia é uma ferramenta para transformar ideias em experiências reais. No meu projeto Project Drone, apliquei conceitos de Inteligência Artificial (NavMesh) para criar comportamentos de perseguição, enquanto no projeto Unsealed, estou mergulhando na arquitetura Multiplayer (Mirror) e modelagem 3D no Blender.
+                Sou um desenvolvedor movido pela curiosidade e pelo aprendizado contínuo. Não recuo diante de documentações escassas; utilizo ferramentas avançadas e IA para acelerar minha produtividade e resolver problemas de engenharia de software.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="projetos" class="projetos">
+    <h2 class="projetos-titulo">Meus Projetos</h2>
+    
+    <div class="projetos-caixa">
+        
+        <div class="projetos-card">
+            <img id= "img-projeto-1" src="Img/project_drone_menu.png" class="foto-projetos" alt="Projeto 1">
+            <div class="caixas-textos-projetos">
+                <h3 class="info-projetos">Jogo de corrida: Project Drone</h3>
+            </div>
+            <p class="paragrafo-projetos">
+               Desenvolvido originalmente para uma exposição escolar, este projeto foi o ponto de partida
+               para aprofundar meus conhecimentos em lógica de jogos e física de veículos.
+               Inspirado na estética e velocidade de Hot Wheels Acceleracers, o jogo foca em jogabilidade fluida
+               e ambientação imersiva, transformando uma paixão de infância em um desafio técnico de programação.
+            </p>
+        </div>
+
+        <div class="projetos-card">
+            <img src="Img/site_racingDrones.png" class="foto-projetos" alt="Projeto 2">
+            <div class="caixas-textos-projetos">
+                <h3 class="info-projetos">Meu primeiro site</h3>
+            </div>
+            <p class="paragrafo-projetos">
+                Meu primeiro site, desenvolvido em 2024 com o objetivo de centralizar todas as informações e o universo do meu jogo de corrida.
+                O foco principal foi criar uma arquitetura de informação clara para que os jogadores pudessem encontrar detalhes do projeto em um só lugar.
+            </p>
+        </div>
+
+        <div class="projetos-card">
+            <img src="Img/unsealed_sneakPeak.png" class="foto-projetos" alt="Projeto 3">
+            <div class="caixas-textos-projetos">
+                <h3 class="info-projetos">Jogo de luta 3D: Unsealed (Em desenvolvimento)</h3>
+            </div>
+            <p class="paragrafo-projetos">
+                Atualmente em produção, o Unsealed é o meu projeto mais ambicioso até agora.
+                Este brawler 3D baseado em física nasceu da vontade de superar limites técnicos encontrados em projetos anteriores.
+                Estou focando em criar um sistema de combate tátil e responsivo, modelos 3D autorais e efeitos visuais (VFX) que elevam o padrão de polimento do meu trabalho.
+                É onde estou aplicando tudo o que aprendi sobre otimização e game design.
+            </p>
+        </div>
+
+    </div> </section>
+
+    <iframe width="1000" height="480" src="https://www.youtube.com/embed/JW5SWZ9Fn30" title="Project Drone - Reino da Sucata" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="video" id="video">
+
+    </iframe>
+    
+    <section id="contato" class="contato">
+        <h2 class="contatos-titulo">Entre em contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+
+        <div class="grupo-form">
+            <input placeholder="Nome" class="campo-form" id="nome">
+        </div>
+
+        <div class="grupo-form">
+            <textarea placeholder="Digite sua Mensagem" id="mensagem" class="campo-form" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+    </section>
+</body>
+
+    <script>
+        function enviarWhats(event) {
+        
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511967945044';
+
+            const texto = `Eae! me chamo ${nome}, ${mensagem}`;
+            const msgFormatado = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatado}`;
+
+            console.log(url);
+
+            window.open(url, '_blank');
+        }
+
+    const imagensProjeto1 = [
+    "Img/project_drone_menu.png",
+    "Img/project_drone_cosmicRealm.png", 
+    "Img/project_drone_junkRealm.png",
+    "Img/project_drone_rainRealm.png",
+    "Img/project_drone_metroRealm.png",
+    "Img/project_drone_skyRealm.png",
+    "Img/project_drone_windRealm.png"
+    ];
+
+    let indiceAtual = 0;
+    const elementoImagem = document.getElementById("img-projeto-1");
+
+    function trocarImagem() {
+
+        elementoImagem.classList.add("foto-hide");
+
+    setTimeout(() => {
+        indiceAtual++;
+
+        if (indiceAtual >= imagensProjeto1.length) {
+            indiceAtual = 0;
+        }
+
+        elementoImagem.src = imagensProjeto1[indiceAtual];
+
+        elementoImagem.classList.remove("foto-hide");
+    }, 500);
+    }
+
+    setInterval(trocarImagem, 4000);
+        
+    </script>
+</html>

@@ -1,0 +1,273 @@
+@font-face {
+    font-family: Tektur;
+    src: url(Font/Tektur-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tektur;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primaria: #0d0d0d; /* preto */
+    --secundaria: #39FF14; /* verde */
+    --terciaria: #2b2b2b; /* cinza */
+    --quaternaria: #e0e0e0; /* branco */
+
+    /* Não esquecer de tomar cuidado com o 60, 30 e 10. 
+       Preto para o fundo, verde para botão e texto,
+       cinza para bordas e cinza meio branco para descrição 
+    */
+
+    --verde-transparente: rgba(0, 255, 72, 0.4)
+}
+
+body {
+    background-color: var(--primaria);
+    color: var(--secundaria);
+}
+
+.navegacao {
+    position: fixed;
+    top: 0;
+    background: var(--verde-transparente);
+    width: 100%;
+    z-index: 999;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+.menu-links {
+    text-decoration: none;
+    color: var(--quaternaria);
+    font-weight: 100;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-links::after {
+    content: '';
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--quaternaria), var(--verde-transparente));
+    transition: width 0.5s ease;
+}
+
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu-links:hover::after {
+    width: 100%;
+}
+
+.foto {
+    width: 112px;
+    height: 96px;
+    box-shadow: 0 0 50px var(--verde-transparente);
+    border-radius: 50%;
+    border: 4px solid var(--secundaria);
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--secundaria);
+    margin: 20px;
+}
+
+.sobre {
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.sobre-titulo {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.caixa-sobre {
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid var(--secundaria);
+    backdrop-filter: blur(10px);
+    background: var(--terciaria);
+}
+
+.sobre-paragrafo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.projetos {
+    padding: 8rem 2rem;
+}
+
+.foto-projetos {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 1;
+}
+
+.foto-hide {
+    opacity: 0;
+}
+
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+} 
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.caixas-textos-projetos {
+    padding: 1.5rem;
+}
+
+.projetos-card {
+    background: var(--terciaria);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--terciaria);
+    overflow: hidden;
+}
+
+.projetos-card:hover {
+    box-shadow: 0 10px 20px var(--verde-transparente);
+    transform: translateY(-10px) scale(1.03);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}  
+
+.info-projetos {
+    margin-bottom: 2px;;
+}
+
+.paragrafo-projetos {
+    color: var(--quaternaria);
+    line-height: 1.5;
+    padding: 1.5rem;
+}
+
+.video {
+    border: 1px solid var(--secundaria);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contato {
+    padding: 6rem 2rem;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.contato-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--terciaria);
+    backdrop-filter: var(--verde-transparente);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--secundaria);
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background:#474747;
+    border: var(--secundaria);
+    border-radius: 8px;
+    color: var(--quaternaria);
+}
+
+.botao-form {
+    color: var(--primaria);
+    background: linear-gradient(45deg, var(--secundaria), var(--quaternaria));
+    padding: 1rem 2rem;
+    border: 1px solid var(--terciaria);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    width: 100%;
+    transition: all 0.7s ease;
+}
+
+.botao-form:hover {
+    background: linear-gradient(45deg, var(--quaternaria), var(--primaria));
+    color: var(--secundaria);
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: 
+    radial-gradient(circle at 10% 20%, var(--secundaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+    var(--primaria);
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
